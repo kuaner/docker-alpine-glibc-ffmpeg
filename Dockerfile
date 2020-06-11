@@ -6,7 +6,7 @@ ENV GLIBC_VERSION=2.31-r0
 ENV VER=4.2.2
 
 # Download and install glibc ffmpeg
-RUN apk add --update curl tzdata telnet && \
+RUN apk add --update curl tzdata busybox-extras && \
   curl -Lo /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
   curl -Lo glibc.apk "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk" && \
   curl -Lo glibc-bin.apk "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}.apk" && \
